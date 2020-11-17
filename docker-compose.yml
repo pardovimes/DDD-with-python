@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  football-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app:/app/app
+      - ./tests:/app/tests
+    environment:
+      FLASK_ENV: development
